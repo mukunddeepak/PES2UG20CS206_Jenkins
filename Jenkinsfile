@@ -10,14 +10,14 @@ pipeline {
     }
     stage('Test'){
       steps{
-        sh './a.out'
+        sh './a'
       }
     }
     stage('Deploy') {
       when {
         expression {
           currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-        
+        }
       }
       steps {
         echo 'Deployment Successful'
