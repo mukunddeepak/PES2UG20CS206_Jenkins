@@ -14,7 +14,9 @@ pipeline {
       }
     }
     stage('Deploy'){
-      sh './a.out'
+      steps{
+        sh './a.out'
+      }
     }
   }
 }
